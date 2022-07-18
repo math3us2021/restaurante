@@ -1,0 +1,35 @@
+{
+  "restaurante": [
+    {
+      "prato": "Bife de Frango",
+      "preco": "R$ 20,00",
+      "id": "10"
+    },
+    {
+      "prato": "matheeeeeus",
+      "preco": "1250",
+      "id": "QtOxzCn"
+    },
+    {
+      "prato": "qwe",
+      "preco": "qwe",
+      "id": "rDZHQJu"
+    },
+    {
+      "prato": "tete",
+      "preco": "123456",
+      "id": "jsHyTqV"
+    },
+    {
+      "prato": "teste",
+      "preco": "dois",
+      "id": "2vYT4Eu"
+    },
+    {
+      "prato": "churros",
+      "preco": "5000",
+      "id": "5KTvs_6"
+    }
+  ],
+  "clientes": []
+}
