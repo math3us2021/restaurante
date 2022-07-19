@@ -65,3 +65,18 @@ input{
 }
 
 `;
+
+export const InputPostCliente = styled.div`
+
+input{
+    text-align: center;  
+    background: #222;
+    color: #fff;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    opacity: 0.9,2;
+    
+    
+}
+
+`;
