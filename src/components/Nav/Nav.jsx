@@ -10,7 +10,7 @@ export default () => {
                 </img>
             </Link>
             <div>
-                <Link to="/">
+                <Link to="/employees">
                 <ButtonNav>Equipe </ButtonNav>
                 </Link>
                 <Link to="/user">

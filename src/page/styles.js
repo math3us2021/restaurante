@@ -74,9 +74,7 @@ input{
     color: #fff;
     border: 5px solid #fff;
     border-radius: 10px;
-    opacity: 0.9,2;
-    
-    
+    opacity: 0.9,2;   
 }
 
 `;

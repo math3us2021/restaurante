@@ -29,20 +29,14 @@
       "prato": "churros",
       "preco": "5000",
       "id": "5KTvs_6"
+    },
+    {
+      "prato": "carne moida",
+      "preco": "52",
+      "id": "LTinv69"
     }
   ],
   "clientes": [
-    {
-      "nome": "Matheus",
-      "sobrenome": "Silva",
-      "telefone": "99999999",
-      "rua": "Rua dos Bobos",
-      "bairro": "Bairro dos Bobos",
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "cep": "01234567",
-      "id": "QtOxzCll"
-    },
     {
       "nome": "Jose",
       "sobrenome": "Silva",
@@ -99,27 +93,24 @@
       "id": "OPZzVfB"
     }
   ],
-
-  "employees":[
+  "employees": [
     {
       "nome": "Matheus",
-      "cargo" : "Garcon",
+      "cargo": "Garcon",
       "salario": "R$ 20,00",
       "id": "sdfe"
     },
     {
       "nome": "Izamar",
-      "cargo" : "Gerente",
+      "cargo": "Gerente",
       "salario": "R$ 2000,00",
       "id": "sdfgsgr"
     },
     {
       "nome": "Samuel",
-      "cargo" : "Barmen",
+      "cargo": "Barmen",
       "salario": "R$ 2500,00",
       "id": "srgsgf"
     }
-
-
   ]
 }
