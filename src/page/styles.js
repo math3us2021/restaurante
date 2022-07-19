@@ -41,6 +41,7 @@ export const List = styled.div`
 export const Add = styled.div`
     background: transparent;
     text-align: center; 
+    margin: 1rem;
 `;
 
 export const InputPost = styled.div`

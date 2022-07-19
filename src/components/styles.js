@@ -25,10 +25,23 @@ img{
 }
     
 `;
+// export const NavGeral = styled.div`
+//     align-items: center;
+//     justify-content: center;
+//     diplay: flex;
+//     flex-direction: row;
+//     `;
 
 export const Nav = styled.div`
+    
+    div{
+        margin: 1rem;
+        text-align: center;
+    }
 
-    text-align: center
+    img{
+    background: transparent;
+    }
 `;
 
 export const ButtonNav = styled.button`

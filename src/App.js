@@ -6,7 +6,7 @@ import Create from './page/Create/index';
 import Edit from './page/Edit/index';
 import User from './page/User/index';
 import Employees from './page/Employees/index';
-
+import Cardapio from './page/Cardapio/index';
 
 
 export default function App() {
@@ -18,6 +18,7 @@ export default function App() {
       <Route path="/edit/:id" element={<Edit />} />
       <Route path="/user" element={<User />} />
       <Route path="/employees" element={<Employees />} />
+      <Route path="/cardapio" element={<Cardapio />} />
     </Routes>
   </BrowserRouter>
   );

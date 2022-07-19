@@ -1,9 +1,13 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { List , InputPostCliente, Add} from "../styles";
+import { List, InputPostCliente, Add } from "../styles";
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
+
 
 import Nav from "../../components/Nav/Nav";
 
@@ -11,6 +15,7 @@ import Nav from "../../components/Nav/Nav";
 
 export default function App() {
     const [clientes, setClientes] = useState([]);
+    const [clienteSearch, setClienteSearch] = useState("");
     const [nome, setNome] = useState("");
     const [sobrenome, setSobrenome] = useState("");
     const [telefone, setTelefone] = useState("");
@@ -19,6 +24,7 @@ export default function App() {
     const [cidade, setCidade] = useState("");
     const [cep, setCep] = useState("");
     const [estado, setEstado] = useState("");
+    const [cadastro, setCadastro] = useState(false);
 
     useEffect(() => {
         axios.get("http://localhost:3004/clientes")
@@ -48,6 +54,16 @@ export default function App() {
             )
     }
 
+
+    function handleSearch(e) {
+        axios.get(`http://localhost:3004/clientes?${clienteSearch ? `nome=${clienteSearch}` : " "}`)
+            .then(res => {
+                setClientes(res.data);
+                setClienteSearch("");
+            })
+
+    }
+
     function handleCep() {
         axios.get(`https://viacep.com.br/ws/${cep}/json/`)
             .then(res => {
@@ -60,6 +76,7 @@ export default function App() {
             )
     }
 
+
     function deletFunction(id) {
         axios.delete(`http://localhost:3004/clientes/${id}`)
             .then(res => {
@@ -67,6 +84,8 @@ export default function App() {
                 );
             })
     }
+
+
     function handledelete(id) {
         Swal.fire({
             title: 'Você deseja excluir o arquivo? Após a exclusão não será possível recuperar o arquivo.',
@@ -86,10 +105,9 @@ export default function App() {
     }
 
 
+    function FormUser() {
 
-    return (
-        <div>
-            <Nav></Nav>
+        return (
             <InputPostCliente>
                 <form onSubmit={(e) => handlePost(e)}>
 
@@ -140,13 +158,40 @@ export default function App() {
                     </div>
 
                     <Add>
-                
-                    <button type="submit" className="btn btn-primary btn-lg">Salvar Cliente</button>
-               
-            </Add>
-                    {/* <button type="submit" className="btn btn-primary">Salvar Cliente</button> */}
+
+                        {/* <button type="submit" className="btn btn-primary btn-lg">Salvar Cliente</button> */}
+                        <Button type="submit" variant="contained" endIcon={<SendIcon />}>Cadastrar</Button>
+                        <Button color="error" variant="contained" startIcon={<DeleteIcon />} onClick={() => setCadastro(false)}> Desistir </Button>
+                    </Add>
+
                 </form>
             </InputPostCliente>
+
+        )
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    return (
+        <div>
+            <Nav></Nav>
+
+            <Add>
+                <Button variant="contained" disableElevation value={cadastro}
+                    onClick={() => setCadastro(true)} hidden={cadastro}> {/* hidden esconde o cadastro */}
+                    + Adicionar Cliente
+                </Button>
+            </Add>
+            {cadastro && FormUser()}  {/* Se cadastro for true, mostra o formulário */}
+
+            <Add >
+                    <input type="text" value={clienteSearch} onChange={(e)=> setClienteSearch(e.target.value)}
+                    ></input>
+                    <button onClick={handleSearch} type="submit" className="btn btn-primary btn-lg">Buscar</button>
+                    <button onClick={()=> handleSearch(" ")} name="zerar" type="submit" className="btn btn-sucess btn-lg">Todos os clientes</button>
+            </Add>
+
 
 
             <List>
@@ -161,7 +206,7 @@ export default function App() {
                             <th>Cidade</th>
                             <th>Estado</th>
                             <th>CEP</th>
-                           
+
                             <th>Excluir</th>
 
                             {clientes.map(cliente => (
@@ -174,8 +219,8 @@ export default function App() {
                                     <td> <strong>{cliente.cidade}</strong></td>
                                     <td> <strong>{cliente.estado}</strong></td>
                                     <td> <strong>{cliente.cep}</strong></td>
-                             
-                                    <td><button  className="btn btn-outline-danger" onClick={() => handledelete(cliente.id)}>Excluir</button>                                
+
+                                    <td><button className="btn btn-outline-danger" onClick={() => handledelete(cliente.id)}>Excluir</button>
                                     </td>
                                 </tr>
 

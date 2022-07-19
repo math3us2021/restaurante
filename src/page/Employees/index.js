@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import { InputPost} from "../styles";
+import Nav from "../../components/Nav/Nav";
 
 
 export default function App() {
@@ -28,9 +28,10 @@ export default function App() {
 
     return (
         <div>
-            <h1>Hello World</h1>
+            <Nav></Nav>
+           
             
-            <div style={{ height: 450, width: '200%' , background: 'rgba(255, 255, 255, .25)' , alignItems: "center"}}>
+            <div style={{ height: 350, width: '100%' , background: 'rgb(87, 84, 84)' , color:"#fff" , textAlign: "center"}}>
       <DataGrid rows={employees} columns={columns} />
     </div>
 
