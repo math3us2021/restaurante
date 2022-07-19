@@ -55,17 +55,6 @@
       "id": "QtOxkk"
     },
     {
-      "nome": "Matheus",
-      "sobrenome": "Ferreira",
-      "telefone": "16988461854",
-      "rua": "teste, 5 ",
-      "bairro": "Bairro dos Bobos",
-      "cidade": "franca",
-      "estado": "SP",
-      "cep": "14400500",
-      "id": "8VSuEKQ"
-    },
-    {
       "nome": "marcos",
       "sobrenome": "ferreira",
       "telefone": "1666888886",
@@ -99,15 +88,38 @@
       "id": "vKkZyXE"
     },
     {
-      "nome": "asdas",
-      "sobrenome": "asdasdasd",
-      "telefone": "asdasd",
+      "nome": "matheus",
+      "sobrenome": "ferreira",
+      "telefone": "16988461854",
       "rua": "Rua General Carneiro",
       "bairro": "Centro",
       "estado": "SP",
       "cidade": "Franca",
       "cep": "14400-500",
-      "id": "Sjy4w7e"
+      "id": "OPZzVfB"
     }
+  ],
+
+  "employees":[
+    {
+      "nome": "Matheus",
+      "cargo" : "Garcon",
+      "salario": "R$ 20,00",
+      "id": "sdfe"
+    },
+    {
+      "nome": "Izamar",
+      "cargo" : "Gerente",
+      "salario": "R$ 2000,00",
+      "id": "sdfgsgr"
+    },
+    {
+      "nome": "Samuel",
+      "cargo" : "Barmen",
+      "salario": "R$ 2500,00",
+      "id": "srgsgf"
+    }
+
+
   ]
 }
