@@ -47,23 +47,40 @@ export const AddUser = styled.div`
     background: transparent;
     text-align: center; 
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    
 
-    button{
-        background: transparent;
-        border-radius: 8px;
-        width: 250px;
-        height: 40px;
+    div{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        align-items: center;
     }
 
+    button{
+        color: #fff;
+        background: #b33c00;
+        border-radius: 8px;
+        width: 150px;
+        height: 30px;
+        opacity: 0.9;
+    }
+
+    input::placeholder {
+        color: #eaeae1;
+      }
+      
     input{
         text-align: center; 
         width: 450px;
-        hight: 50px;
-        background: #222;
+        hight: 80px;
+        background: #713f12;
         color: #fff;
         border: 1px solid #fff;
         border-radius: 10px;
         opacity: 0.8;
+        
 `;
 
 
@@ -84,11 +101,8 @@ input{
     border: 5px solid #fff;
     border-radius: 10px;
     opacity: 0.8;
-    
-    
-}
+}`;
 
-`;
 
 export const InputPostCliente = styled.div`
 
@@ -99,6 +113,4 @@ input{
     border: 5px solid #fff;
     border-radius: 10px;
     opacity: 0.9,2;   
-}
-
-`;
+}`;

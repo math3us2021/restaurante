@@ -13,7 +13,7 @@ div{
 };
 
 h1{
-    opacity: 0.5;
+    opacity: 0.8;
     font-size: 3em;
     color: ##DAF7A6;
     -webkit-box-shadow: 11px 2px 8px 7px rgba(50, 53, 56, 0.76);
@@ -44,7 +44,7 @@ text-align: center;
 width: 250px;
 hight: 50px;
 margin: 1rem;
-background: #713f12;
+background: #4d1a00;
 color: #fff;
 border: 2px solid #fff;
 border-radius: 10px;

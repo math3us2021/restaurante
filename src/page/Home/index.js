@@ -4,10 +4,9 @@ import axios from "axios";
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom"
 
-import { List, Add, InputPost } from "../styles";
+import { List, AddUser, InputPost } from "../styles";
 import Nav from "../../components/Nav/Nav";
 import Card from "../../components/Card/Card";
-import Footer from "../../components/Footer/Footer";
 import { Button } from "@mui/material";
 
 
@@ -61,55 +60,55 @@ function App() {
 
     function handleSearchUser(e) {
         e.preventDefault();
-        axios.get(`http://localhost:3004/clientes?${user ? `nome=${user}` : " " }`)
-        .then(res => {
-            setClientes(res.data);
-            setUser("");//limpa o input
-        
-        })
+        axios.get(`http://localhost:3004/clientes?${user ? `nome=${user}` : " "}`)
+            .then(res => {
+                setClientes(res.data);
+                setUser("");//limpa o input
+
+            })
     }
     function searchUser() {
         return (
             <div>
-                 <List>
-                <table>
-                    <tbody>
-                        <th>
-                            <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Telefone</th>
-                            <th>Rua</th>
-                            <th>Bairro</th>
-                            <th>Cidade</th>
-                            <th>Estado</th>
-                            <th>CEP</th>
+                <List>
+                    <table>
+                        <tbody>
+                            <th>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>Telefone</th>
+                                <th>Rua</th>
+                                <th>Bairro</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                                <th>CEP</th>
 
-                            <th>Excluir</th>
+                                <th>Excluir</th>
 
-                            {clientes.map(cliente => (
-                                <tr key={cliente.id} >
-                                    <td><strong>{cliente.nome}</strong></td>
-                                    <td><strong>{cliente.sobrenome}</strong></td>
-                                    <td><strong>{cliente.telefone}</strong></td>
-                                    <td> <strong>{cliente.rua}</strong></td>
-                                    <td> <strong>{cliente.bairro}</strong></td>
-                                    <td> <strong>{cliente.cidade}</strong></td>
-                                    <td> <strong>{cliente.estado}</strong></td>
-                                    <td> <strong>{cliente.cep}</strong></td>
+                                {clientes.map(cliente => (
+                                    <tr key={cliente.id} >
+                                        <td><strong>{cliente.nome}</strong></td>
+                                        <td><strong>{cliente.sobrenome}</strong></td>
+                                        <td><strong>{cliente.telefone}</strong></td>
+                                        <td> <strong>{cliente.rua}</strong></td>
+                                        <td> <strong>{cliente.bairro}</strong></td>
+                                        <td> <strong>{cliente.cidade}</strong></td>
+                                        <td> <strong>{cliente.estado}</strong></td>
+                                        <td> <strong>{cliente.cep}</strong></td>
 
-                                    <td><button className="btn btn-outline-danger" onClick={() => handledelete(cliente.id)}>Excluir</button>
-                                    </td>
-                                </tr>
+                                        <td><button className="btn btn-outline-danger" onClick={() => handledelete(cliente.id)}>Excluir</button>
+                                        </td>
+                                    </tr>
 
-                            ))}
+                                ))}
 
-                        </th>
-                    </tbody>
-                </table>
-            </List>
+                            </th>
+                        </tbody>
+                    </table>
+                </List>
             </div>
         )
-    
+
     }
 
 
@@ -176,33 +175,37 @@ function App() {
         <div >
 
             <Nav></Nav>
-            <div>
-                <form>
-                    <label>Digite o prato desejado</label>
-                    <input type="text" placeholder="Buscar prato no cardápio" value={prato} onChange={e => setPrato(e.target.value)} />
-                    <button type="submit"
-                        onClick={(e) => { handleSearchCardapio(e); setCardapio(true) }} >Buscar</button>
-                    <button onClick={() => setCardapio(false)}>Fechar busca</button>
-                </form>
-            </div>
-            <div>
-                <form>
-                    <label>
-                        <input type="text" placeholder="Buscar por cliente" value={user} onChange={e => setUser(e.target.value)} />
-                        <button type="submit"
-                        onClick={(e) => { handleSearchUser(e);setOpenUse(true) }} >Buscar</button>
-                        <button onClick={() => setOpenUse(false)}>Fechar busca</button>
-
-                    </label>
-                </form>
-            </div>
-
-            {cardapio && searchCardapio()}
-            {openUse &&  searchUser()}
-          
-
-
             <Card></Card>
+            <AddUser>
+                <div>
+                    <form>
+                        <input type="text" placeholder="Buscar prato no cardápio" value={prato} onChange={e => setPrato(e.target.value)} />
+                        <div>
+                            <button type="submit"
+                                onClick={(e) => { handleSearchCardapio(e); setCardapio(true) }} >Buscar</button>
+                            <button onClick={() => setCardapio(false)}>Fechar busca</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <label>
+                            <input type="text" placeholder="Buscar por cliente" value={user} onChange={e => setUser(e.target.value)} />
+                            <div>
+                                <button type="submit"
+                                    onClick={(e) => { handleSearchUser(e); setOpenUse(true) }} >Buscar</button>
+                                <button onClick={() => setOpenUse(false)}>Fechar busca</button>
+                            </div>
+                        </label>
+                    </form>
+                </div>
+
+                {cardapio && searchCardapio()}
+                {openUse && searchUser()}
+
+            </AddUser>
+
+          
             {/* <Footer></Footer> */}
 
 
