@@ -22,15 +22,9 @@ h1{
 img{
     opacity: 0.8;
     border: 2px solid #A04000;
-}
-    
+}  
 `;
-// export const NavGeral = styled.div`
-//     align-items: center;
-//     justify-content: center;
-//     diplay: flex;
-//     flex-direction: row;
-//     `;
+
 
 export const Nav = styled.div`
     
@@ -50,9 +44,9 @@ text-align: center;
 width: 250px;
 hight: 50px;
 margin: 1rem;
-background: #222;
+background: #713f12;
 color: #fff;
-border: 5px solid #fff;
+border: 2px solid #fff;
 border-radius: 10px;
 opacity: 0.8;
 `;

@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { List, InputPostCliente, Add } from "../styles";
+import { List, InputPostCliente, AddUser, Add } from "../styles";
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2';
 import Button from '@mui/material/Button';
@@ -31,6 +31,7 @@ export default function App() {
             .then(res => {
                 setClientes(res.data);
                 console.log("useState OK");
+                console.log(clientes)
             }
             )
     }, []);
@@ -61,7 +62,6 @@ export default function App() {
                 setClientes(res.data);
                 setClienteSearch("");
             })
-
     }
 
     function handleCep() {
@@ -185,12 +185,14 @@ export default function App() {
             </Add>
             {cadastro && FormUser()}  {/* Se cadastro for true, mostra o formulário */}
 
-            <Add >
+            <AddUser >
                     <input type="text" value={clienteSearch} onChange={(e)=> setClienteSearch(e.target.value)}
                     ></input>
-                    <button onClick={handleSearch} type="submit" className="btn btn-primary btn-lg">Buscar</button>
-                    <button onClick={()=> handleSearch(" ")} name="zerar" type="submit" className="btn btn-sucess btn-lg">Todos os clientes</button>
-            </Add>
+                    {/* <button onClick={handleSearch} type="submit" className="btn btn-primary btn-lg">Buscar</button> */}
+                    <Button type="submit" onClick={handleSearch} variant="contained" endIcon={<SendIcon />}>Buscar</Button>
+                    <Button type="submit" onClick={()=> handleSearch(" ")} variant="//#endregion" endIcon={<SendIcon />}>Todos os clientes</Button>
+                    {/* <button onClick={()=> handleSearch(" ")} name="zerar" type="submit" className="btn btn-sucess btn-lg">Todos os clientes</button> */}
+            </AddUser>
 
 
 

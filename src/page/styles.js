@@ -43,6 +43,29 @@ export const Add = styled.div`
     text-align: center; 
     margin: 1rem;
 `;
+export const AddUser = styled.div`
+    background: transparent;
+    text-align: center; 
+    margin: 1rem;
+
+    button{
+        background: transparent;
+        border-radius: 8px;
+        width: 250px;
+        height: 40px;
+    }
+
+    input{
+        text-align: center; 
+        width: 450px;
+        hight: 50px;
+        background: #222;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        opacity: 0.8;
+`;
+
 
 export const InputPost = styled.div`
 

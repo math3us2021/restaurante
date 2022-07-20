@@ -13,6 +13,7 @@ export default function App() {
             .then(res => {
                 setEmployees(res.data);
                 console.log("useState OK");
+                console.log(employees)
             })
     }, []);
 

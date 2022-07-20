@@ -10,6 +10,7 @@ import Cardapio from './page/Cardapio/index';
 
 
 export default function App() {
+  
   return (
     <BrowserRouter>
     <Routes>

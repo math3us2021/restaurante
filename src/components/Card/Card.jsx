@@ -70,21 +70,17 @@ export default (props) => {
 
                     <div className="col-lg-4">
                         <img className="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV8K8C1RSLI6XtzzjVD9qS5t290jLbq2dLEw&usqp=CAU" alt="Generic placeholder image" width="140" height="140" onClick={() => especialidade("camarao")} ></img>
-
                         <h2>Camarrão ao cremy</h2>
-
-
                     </div>
                     <div className="col-lg-4">
                         <img className="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9bCrms1GApsb21zrflrGEQ5aT8hdtSV6XTg&usqp=CAU" alt="Generic placeholder image" width="140" height="140" onClick={() => especialidade("angus")}></img>
                         <h2>Angus</h2>
-
                     </div>
                     <div className="col-lg-4">
                         <img className="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHjn2XCATUwNHRfQGzXcH1iqiAZKFLTzxZhg&usqp=CAU" alt="Generic placeholder image" width="140" height="140" onClick={() => especialidade("frango")}></img>
                         <h2>Frangolito</h2>
-
                     </div>
+                    
                 </div>
             </Card>
         </div>
